@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LongLinkTest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apigetawayzuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumerorder" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumerorder-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumerorder-hystrix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumerorderribben" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fileupload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/getawayfilter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provideruser" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provideruser-hystrix" charset="UTF-8" />
+  </component>
+</project>

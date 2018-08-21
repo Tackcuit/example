@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+        <!--给自己起一个别名-->
+        <dubbo:application name="userService" />
+        <!--告诉dubbo注册中心在什么地址-->
+        <dubbo:registry protocol="zookeeper" address="www.qfjava.cn:8091" />
+    <!--<dubbo:registry address="zookeeper://10.20.153.10:2181" />-->
+        <!--发布什么协议的 端口是多少,端口在本机上必须没有被使用 目的是为了让消费者可以通过这个协议以及端口找到我们的服务-->
+        <dubbo:protocol name="dubbo" port="20880" />
+    <!--发布具体的服务类型-->
+        <dubbo:service interface="com.qf.liuzhongxu.p2pproject.user.service.UserService" ref="userServiceImpl" />
+        <!--要注意，发布的一定要是接口，不能是实现类-->
+        <!--通过dubbo将想要发送的服务器送到远程-->
+</beans>

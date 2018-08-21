@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>paymentservlet</servlet-name>
+        <servlet-class>com.qf.weixin.servlet.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>imageservlet</servlet-name>
+        <servlet-class>com.qf.weixin.servlet.ImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>resultservlet</servlet-name>
+        <servlet-class>com.qf.weixin.servlet.ResultServlet</servlet-class>
+    </servlet>
+
+    <!--每个servlet都应该对应着相应的mapping-->
+    <servlet-mapping>
+        <servlet-name>paymentservlet</servlet-name>
+        <url-pattern>/weixinzhifu/paymentservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>imageservlet</servlet-name>
+        <url-pattern>/weixinzhifu/imageservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>resultservlet</servlet-name>
+        <url-pattern>/weixinzhifu/resultservlet</url-pattern>
+    </servlet-mapping>
+</web-app>

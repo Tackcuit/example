@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LongLinkTest/LongLinkTest.iml" filepath="$PROJECT_DIR$/LongLinkTest/LongLinkTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apigetawayzuul/apigetawayzuul.iml" filepath="$PROJECT_DIR$/apigetawayzuul/apigetawayzuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder/consumerorder.iml" filepath="$PROJECT_DIR$/consumerorder/consumerorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder-feign/consumerorder-feign.iml" filepath="$PROJECT_DIR$/consumerorder-feign/consumerorder-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder-hystrix/consumerorder-hystrix.iml" filepath="$PROJECT_DIR$/consumerorder-hystrix/consumerorder-hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorderribben/consumerorderribben.iml" filepath="$PROJECT_DIR$/consumerorderribben/consumerorderribben.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fileupload/fileupload.iml" filepath="$PROJECT_DIR$/fileupload/fileupload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/getawayfilter/getawayfilter.iml" filepath="$PROJECT_DIR$/getawayfilter/getawayfilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provideruser/provideruser.iml" filepath="$PROJECT_DIR$/provideruser/provideruser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provideruser-hystrix/provideruser-hystrix.iml" filepath="$PROJECT_DIR$/provideruser-hystrix/provideruser-hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
+    </modules>
+  </component>
+</project>

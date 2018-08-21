@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.qf.lzx</groupId>
+    <artifactId>fastdfswithspringboot</artifactId>
+    <version>1.0</version>
+    <modules>
+        <module>borrowdatapojo</module>
+        <module>borrowdataserviceinterface</module>
+        <module>borrowdataserviceimpl</module>
+        <module>borrowdatacontroller</module>
+    </modules>
+    <!--声明为父项目的时候要注意吧打包方式改一下-->
+    <packaging>pom</packaging>
+
+    <parent>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>1.5.9.RELEASE</version>
+    </parent>
+
+
+    <!--如果上面的依赖包无法下载,添加一下仓库地址-->
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

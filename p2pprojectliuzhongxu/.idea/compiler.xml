@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="commonsbean" />
+        <module name="commonsMQ" />
+        <module name="commonsrabbitMQ" />
+        <module name="commonsredis" />
+        <module name="commonstools" />
+        <module name="freemarker" />
+        <module name="lock" />
+        <module name="reflectdemo" />
+        <module name="shiro" />
+        <module name="shiroDemo" />
+        <module name="usercontroller" />
+        <module name="usermapper" />
+        <module name="userpojo" />
+        <module name="userserviceimpl" />
+        <module name="userserviceinterface" />
+        <module name="validcodecontroller" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commonsbean" target="1.8" />
+      <module name="commonsMQ" target="1.8" />
+      <module name="commonsrabbitMQ" target="1.8" />
+      <module name="commonsredis" target="1.8" />
+      <module name="commonstools" target="1.8" />
+      <module name="freemarker" target="1.8" />
+      <module name="lock" target="1.8" />
+      <module name="p2pprojectliuzhongxu" target="1.8" />
+      <module name="reflectdemo" target="1.8" />
+      <module name="shiro" target="1.8" />
+      <module name="shiroDemo" target="1.8" />
+      <module name="usercontroller" target="1.8" />
+      <module name="usermapper" target="1.8" />
+      <module name="userpojo" target="1.8" />
+      <module name="userserviceimpl" target="1.8" />
+      <module name="userserviceinterface" target="1.8" />
+      <module name="validcodecontroller" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

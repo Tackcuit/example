@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="commonsrabbitMQ:war">
+    <output-path>$PROJECT_DIR$/commonsrabbitMQ/target</output-path>
+    <root id="archive" name="commonsrabbitMQ-1.0.war">
+      <element id="artifact" artifact-name="commonsrabbitMQ:war exploded" />
+    </root>
+  </artifact>
+</component>

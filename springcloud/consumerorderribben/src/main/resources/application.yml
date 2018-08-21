@@ -1,0 +1,19 @@
+server:
+  port: 8900 #端口号
+spring:
+  application:
+    name: consumer-ribben
+eureka:
+  client:
+    serviceUrl: #大坑，要注意层级千万不要把下边的层级和上边写一块了
+      defaultZone: http://user:1234@localhost:10000/eureka/
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://user:1234@localhost:10000/eureka/
+
+#这里也可以配置负载均衡，但是要有多个不同名字的提供作者才能看出效果
+PROVIDER:  #配置当前服务使用负载均衡
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

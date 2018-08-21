@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+自己的名字<input type="text" id="name"><br>
+对方的名字<input type="text" id="toName"><br>
+发送的内容<input type="text" id="content"><br>
+<button  id="connect" onclick="connect()">连接</button>
+<button  id="send" onclick="send()">发送</button><br>
+<span id="result"></span>
+</body>
+
+
+<script type="text/javascript">
+    var websocket=null;
+    function  connect() {
+
+        var username=document.getElementById("name").value;//需要判断接收者
+        //先判断浏览器是否支持websocket
+        if ('WebSocket' in window) {
+            websocket=new WebSocket("ws://"+document.location.host+"/websocket/"+username);
+        }else{
+            alert("世界上最遥远的距离是就是我在websocket这一端,而你没有websocket");
+        }
+        if (websocket) {
+
+
+            websocket.onerror=function () {
+                setMessage('出现错误');
+            }
+
+            websocket.onopen=function () {
+                setMessage('建立链接');
+            }
+            websocket.onclose=function () {
+                setMessage('关闭连接');
+            }
+            websocket.onmessage=function (event) {
+                //这个地方事件的数据是非常高端的
+                setMessage(event.data);
+            }
+            window.onbeforeunload=function () {
+                if (websocket) {
+                    websocket.close();
+                }
+            }
+        }
+
+    }
+
+    function send() {
+        //找到接收者,找到发送的内容
+
+        //拼接字符串
+        var toName =document.getElementById("toName").value;
+
+        if(toName) {
+            var content=  document.getElementById("content").value;
+
+            var message='{"toName":"'+toName+'","content":"'+content+'"}';
+
+            websocket.send(message);
+
+        }else{
+            setMessage("接收者不能为空");
+        }
+    }
+
+    var span = document.getElementById("result");
+    function  setMessage(message) {
+        span.innerHTML=message;
+    }
+
+</script>
+</html>

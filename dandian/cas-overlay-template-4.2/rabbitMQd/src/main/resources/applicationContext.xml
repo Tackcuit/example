@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <!--这个是rabbit的配置文件-->
+    <!--这个是发送端的配置-->
+    <rabbit:connection-factory id="connectionFactory" username="" password="" host="" port="" virtual-host="" />
+    <!--首先要有rabbit的连接工厂，需要什么写什么-->
+    <rabbit:admin connection-factory="connectionFactory" id="rabbitAdmin" />
+    <!--还需要一个rabbit的管理者admin-->
+    <rabbit:template connection-factory="connectionFactory" exchange="" routing-key="" id="rabbitTemplate" />
+    <!--其次要有rabbit的模板，当然这个模板是支持topic模式的所以说有routing-key="的设置，这个routeKey是可以在java代码中指定的，包括Exchange也可以在代码中指定-->
+    <rabbit:fanout-exchange name="fanoutExchange">
+        <rabbit:bindings>
+            <rabbit:binding queue="myQueue"></rabbit:binding>
+            <!--一个交换机是可以绑定多个队列的-->
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+    <!--然后是交换机和队列的配置-->
+    <rabbit:queue id="myQueue" auto-declare="true" />
+
+
+    <!--这个是rabbitMQ的配置文件-->
+    <!--这个配置是接收端的-->
+    <bean class="" id="messageListener" />
+    <rabbit:listener-container connection-factory="connectionFactory" >
+        <rabbit:listener ref="messageListener" />
+        <!--这个是将你自己写的类绑定到这个监听器上-->
+    </rabbit:listener-container>
+    <rabbit:queue id="listenMessage" auto-declare="true" declared-by="rabbitAdmin"/>
+    <!--这个时候为什么要声明是有rabbitAdmin发布的？-->
+    <rabbit:direct-exchange name="" >
+        <rabbit:bindings>
+            <rabbit:binding queue="listenMessage"></rabbit:binding>
+            <!--接收端的交换机绑定-->
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:topic-exchange name="">
+        <rabbit:bindings>
+            <rabbit:binding pattern="foo.*" queue=""></rabbit:binding>
+            <!--这个还是要绑定队列-->
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+
+
+    <!--接收端的队列名称可以和发送端的队列名称不一样吗？-->
+</beans>

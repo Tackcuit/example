@@ -1,0 +1,9 @@
+server:
+  port: 7900 #定义端口，因为是springboot，所以说不用配置tomcat，这个可以用来控制端口
+spring:
+  application:
+    name: provider
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:1234@localhost:10000/eureka/

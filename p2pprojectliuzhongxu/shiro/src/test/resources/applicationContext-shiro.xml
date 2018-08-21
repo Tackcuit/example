@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 会话管理器 -->
+    <bean id="sessionManager"
+          class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionValidationSchedulerEnabled" value="false"/>
+        <property name="sessionDAO" ref="sessionDAO"/>
+        <property name="sessionValidationInterval" value="1800000"/>  <!-- 相隔多久检查一次session的有效性 -->
+        <property name="globalSessionTimeout" value="1800000"/>  <!-- session 有效时间为半小时 （毫秒单位）-->
+        <property name="sessionIdCookie.name" value="jsid"/>
+        <property name="sessionIdCookie.path" value="/"/>
+    </bean>
+    <!--  <bean id="sessionDAO" class="com.qianfeng.p2p.shiro.cache.RedisSessionDao"></bean>-->
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="sessionManager" ref="sessionManager"/>
+        <!-- <property name="cacheManager" ref="shiroCacheManager" /> -->
+        <!--<property name="realm" ref="myRealm" />-->
+        <property name="authenticator" ref="authenticator"></property>
+        <property name="realms">
+            <list>
+                <ref bean="myRealm"/>
+                <ref bean="adminRealm"/>
+            </list>
+        </property>
+    </bean>
+    <!--配置验证方式-->
+    <bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+        <property name="authenticationStrategy">
+            <bean class="org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy"/>
+        </property>
+
+    </bean>
+
+    <bean id="shiroFilter" class="com.qianfeng.p2p.shiro.filter.MyShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login.html"/>
+        <!-- <property name="successUrl" value="/system/main"/> -->
+        <property name="unauthorizedUrl" value="/admin/backlogin.html"/>
+        <!--<property name="filterChainDefinitions">
+            <value>
+                /js/*=anon
+                /css/*=anon
+                /index.html=anon
+                /login.html=anon
+            </value>
+
+        </property>-->
+    </bean>
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--配置realm-->
+    <bean id="myRealm" class="com.qianfeng.p2p.shiro.realms.ShiroDbRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"></property>
+                <property name="hashIterations" value="1024"></property>
+            </bean>
+        </property>
+    </bean>
+    <!--配置后台帐号用的realm-->
+    <bean id="adminRealm" class="com.qianfeng.p2p.shiro.realms.AdminDbRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"></property>
+                <property name="hashIterations" value="1024"></property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    <!--因为这个文件是spring的监听器加载的,会比springmvc的servlet启动的要早,如果在这里扫描了包含需要引入远程服务对象的类,会导致注入失败,出现异常 -->
+    <!-- 配置 redis-->
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
+        <!--
+                <constructor-arg name="host" value="142.252.248.233"></constructor-arg>-->
+
+        <!--<constructor-arg name="host" value="111.202.66.35"></constructor-arg>-->
+        <constructor-arg name="host" value="10.9.166.125"></constructor-arg>
+        <constructor-arg name="port" value="8100"></constructor-arg>
+    </bean>
+    <!--<bean id="jedisClientPool" class="com.qianfeng.p2p.utils.JedisClientPool">
+    </bean>-->
+</beans>

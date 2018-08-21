@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean class="org.quartz.JobDetail" id="jobDetail">-->
+        <!--JobDetail是个借口，所以不能直接创建，所以说就用工厂类来创建-->
+    <!--</bean>-->
+
+    <bean class="org.springframework.scheduling.quartz.JobDetailFactoryBean" id="jobDetail">
+        <property name="name" value="lzx" />
+        <property name="group" value="group1" />
+        <property name="jobClass" value="com.qf.quartz.HelloJob" />
+        <!--这个是默认的-->
+        <property name="applicationContextJobDataKey" value="applicationContext" />
+        <property name="durability" value="true" />
+    </bean>
+
+
+    <!--扳机，表达式-->
+    <bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean" id="trigger">
+        <property name="group" value="group1" />
+        <property name="name" value="lzx" />
+        <property name="jobDetail" ref="jobDetail" />
+        <!--这个表达式想写的时候u百度cron表达式生成器-->
+        <property name="cronExpression" value="0/1 16-17 * * * ? *" />
+    </bean>
+
+
+    <!--最后配置调度器-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails" ref="jobDetail" />
+        <property name="triggers">
+            <list>
+                <ref bean="trigger" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

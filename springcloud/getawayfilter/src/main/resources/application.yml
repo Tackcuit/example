@@ -1,0 +1,14 @@
+server:
+  port: 10900
+spring:
+  application:
+    name: zuulfilter
+security:
+  user:
+    name: user
+    password: 1234
+#别忘了要绑定到eureka上
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:1234@localhost:10000/eureka

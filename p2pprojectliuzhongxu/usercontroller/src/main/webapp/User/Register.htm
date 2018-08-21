@@ -1,0 +1,377 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>用户注册 - 千锋教育教学贷</title>
+    <link href="/res/core/styles/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="m-warp m-bg">
+    <div class="m-body">
+
+        <div class="m-top">
+            <div class="m-container">
+                <div class="g-left wg7 mt5">
+    <span class="fcblueash-2">
+      欢迎致电： <span class="fs18 mr10">400-811-9990</span> 服务时间：9:00 - 18:00
+    </span>
+                </div>
+
+                <div class="g-right wgm5">
+                    <ul class="top-topnav g-right js-topnav">
+                        <li>
+                            <a href="/tool/calculator.htm">工具箱</a>
+                            <dl>
+                                <dd>
+                                    <a href="/tool/calculator.htm">利息计算器</a>
+                                </dd>
+                                <dd>
+                                    <a href="/tool/risk.htm">抗风险能力测试</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="/help/">帮助中心</a>
+                        </li>
+                        <li>
+                            <a href="/news/" class="g-noneborder">关于我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-head">
+            <div class="m-container pt10">
+                <div class="g-left wg4">
+                    <h1 class="head-logo">
+                        <a href="/">千锋教育教学贷</a>
+                    </h1>
+                </div>
+                <div class="g-right wg8">
+                    <ul class="head-nav mt30">
+                        <li class="ml25" style="display:inline;">
+                            <a href="/">首 页</a>
+                        </li>
+                        <li>
+                            <a href="/borrow/">我要投资 <i class="iconfont"></i></a>
+                            <dl class="m-shadow">
+                                <dt><a href="/borrow/">投资列表</a></dt>
+                                <dt><a href="/borrow/transferlist.htm">债权市场</a></dt>
+                                <dt><a href="/finance/">智能投资</a></dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="/loan/">我要借款 <i class="iconfont"></i></a>
+                            <dl class="m-shadow">
+                                <dt><a href="/loan/">快速申请</a></dt>
+                                <dt><a href="/help/list.htm?cid=3">借款说明</a></dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="/promotion/">最新活动 <i class="iconfont"></i></a>
+                            <dl class="m-shadow">
+                                <dt><a href="/promotion/">最新活动</a></dt>
+                                <dt><a href="/shop/">积分商城</a></dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="/bbs/">社 区</a>
+                        </li>
+
+
+                        <li class="head-fixednav">
+                            <a href="/user/login.htm"><i class="iconfont fs18"></i> 登 录</a>
+                            <a href="/user/register.htm" class="blue ml5"><i class="iconfont fs18"></i> 注 册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-page">
+
+            <div class="m-container g-zindexmin g-ohide mt20 mb20">
+                <div class="m-userreg js-tabs" data-tabs-selector=".userreg-select dt a">
+                    <dl class="userreg-select">
+                        <dt><a href="#js-form-phone" class="on">通过手机注册</a></dt>
+                        <dt><a href="#js-form-email">通过邮箱注册</a></dt>
+                        <dd>
+                            <strong class="g-block fs18">已有千锋教育教学贷账号？</strong>
+                            <a href="login.htm" class="g-block btn-nobord c-important w164 mt10">登 录</a>
+                            <div class="userreg-loginoauth">
+                                <span>您还可通过以下方式登录:</span>
+
+
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <div class="userreg-form" id="js-form-phone">
+                        <div class="userreg-title">
+                            <a href="/help/" target="_blank" class="fs12 g-right ff-songti pa5 g-fnormal">如何进行注册？</a>
+                            <i class="iconfont fs20"></i>  手机注册
+                        </div>
+                        <div class="form-big mlg2 mt20 mb20">
+                            <form class="js-auto js-vinline" method="post" action="/user/register.action" data-onsuccess="location.href = '/user/';">
+
+                                <div class="ui-radio js-tip">
+                                    <span class="leftfont"><i class="fcred-3">*</i> 选择类型</span>
+                                    <label for="radio15312792566360"><input name="usertypeid1" type="radio" value="1" data-vtype="group" data-vmin="1" data-vmsg="请选择会员类型。" id="radio15312792566360">我要投资</label><label for="radio15312792566361"><input name="usertypeid1" type="radio" value="2" data-vtype="group" data-vmin="1" data-vmsg="请选择会员类型。" id="radio15312792566361">我要借款</label>
+                                </div>
+
+                                <div id="js-validform">
+                                    <div class="input-big js-tip">
+                                        <label class="leftfont"><i class="fcred-3">*</i> 手机号码</label>
+                                        <input type="text" class="text w218 js-vtarget" name="phoneNum" id="phone" placeholder="请输入您的手机号码" maxlength="11" data-vtype="phone|ajax" data-vmsg="请输入正确的手机号码。|此手机号码已经被使用。" data-vurl="?action=exists">
+                                    </div>
+                                    <div class="input-big js-tip" id="js-codeinput">
+                                        <label class="leftfont"><i class="fcred-3">*</i> 验证码</label>
+                                        <input type="text" class="text w95" id="js-phonecode" name="vcode" maxlength="6" placeholder="请输入验证码" data-vtype="must|fun" data-vfun="validvcode" data-vmsg="请输入验证码|验证码错误">
+                                        <a href="javascript:void(0);" id="js-phonecodeimg" onclick="$('img',this).attr('src', 'http://localhost:8282/code/piccode.action?v=' + (new Date()).getTime())">
+                                            <img src="http://localhost:8282/code/piccode.action" width="180" height="50">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="input-big js-tip js-sendvcode" data-vcode-target="#phone" data-vcode-targetform="#js-validform">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 手机验证码</label>
+                                    <input type="text" id="validcode" name="validcode" class="text js-sendvcode-code" size="10" placeholder="请输入验证码" disabled="disabled" maxlength="6" data-vtype="length|fun" data-vfun="validphonecode" data-vmin="6" data-vmax="6" data-vmsg="请输入正确的验证码。|验证码不正确。">
+                                    <input type="button" class="btn-nobordbig c-normal" id="js-phonecodebtn" onclick="getPhoneCode('validcode')" value="获取手机验证码">
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 用户名</label>
+                                    <input type="text" name="userName" class="text w218" placeholder="请输入您的用户名" maxlength="12" data-vtype="custom|length|ajax" data-vreg="^[a-za-z][a-za-z0-9_]+$" data-vurl="?action=exists" data-vmin="6" data-vmax="12" data-vmsg="必须以字母开头，支持字母,数字。|用户名必须在6-12位长度之间。|该用户名已存在。">
+                                    <span class="prompt js-prompt">用户名必须以字母开头，支持6~12位的字母、数字及下划线。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 密码</label>
+                                    <input type="password" class="text w218" name="password" id="password1" maxlength="20" data-vtype="must|length" data-vmin="6" data-vmax="20" data-vmsg="请输入密码。|密码长度过短。">
+                                    <span class="prompt js-prompt">密码支持6~20位的字母、数字及下划线。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 确认密码</label>
+                                    <input type="password" name="confirmPassword" class="text w218" data-vtype="must|same" data-vref="password1" data-vmsg="请输入确认密码。|两次密码输入不一致。">
+                                    <span class="prompt js-prompt">请再次输入与登录密码。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont">推荐人</label>
+                                    <input type="text" class="text w218" placeholder="请输入您收的推荐号" name="referee" value="">
+                                    <span class="prompt js-prompt">如果没有收到推荐号可不填写。</span>
+                                </div>
+                                <div class="ui-vcheckbox mt25 js-tip mlgm1">
+                                    <label class="on" for="checkbox15312792566350">
+                                        <input type="checkbox" name="protocol1" checked="checked" value="1" data-vtype="group" data-vmin="1" data-vmsg="您需要同意用户协议。" id="checkbox15312792566350">同意《<a target="_blank" href="/agreement/?type=userreg">千锋教育教学贷用户协议</a>》</label>
+                                </div>
+                                <input type="hidden" name="type" value="phone">
+                                <div class="btn-submits mt10 mlg1">
+                                    <input type="submit" class="btn-bbord c-normal wg3" value="提交注册" data-success-text="注册成功">
+                                    <div class="wg3"><em class="m-sumtip js-vsum"></em></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="userreg-form g-hide" id="js-form-email">
+                        <div class="userreg-title">
+                            <a href="/help/" target="_blank" class="fs12 g-right ff-songti pa5 g-fnormal">如何进行注册？</a>
+                            <i class="iconfont fs20"></i>  邮箱注册
+                        </div>
+                        <div class="form-big mlg2 mt20 mb20">
+                            <form class="js-auto js-vinline" method="post" action="/user/register.htm" data-onsuccess="location.href = '/user/';">
+
+                                <div class="ui-radio js-tip">
+                                    <span class="leftfont"><i class="fcred-3">*</i> 选择类型</span>
+                                    <label for="radio15312792566362"><input name="usertypeid2" type="radio" value="1" data-vtype="group" data-vmin="1" data-vmsg="请选择会员类型。" id="radio15312792566362">我要投资</label><label for="radio15312792566363"><input name="usertypeid2" type="radio" value="2" data-vtype="group" data-vmin="1" data-vmsg="请选择会员类型。" id="radio15312792566363">我要借款</label>
+                                </div>
+
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 电子邮箱</label>
+                                    <input type="text" class="text w218 js-vtarget" name="email" id="email" placeholder="请输入邮箱地址" data-vtype="email|ajax" data-vmsg="请输入正确的邮箱地址。|此邮箱已经被使用。" data-vurl="?action=exists">
+                                </div>
+                                <div class="input-big js-tip js-sendvcode" data-vcode-target="#email">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 验证码</label>
+                                    <input type="text" name="validcode" class="text js-sendvcode-code" size="10" placeholder="请输入验证码" disabled="disabled" maxlength="6" data-vtype="length|fun" data-vfun="validemailcode" data-vmin="6" data-vmax="6" data-vmsg="请输入正确的验证码。|验证码不正确。">
+                                    <input type="button" class="btn-nobordbig c-normal js-sendvcode-btn" value="发送验证邮件">
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 用户名</label>
+                                    <input type="text" name="name" class="text w218" placeholder="请输入您的用户名" maxlength="12" data-vtype="custom|length|ajax" data-vreg="^[a-za-z][a-za-z0-9_]+$" data-vurl="?action=exists" data-vmin="6" data-vmax="12" data-vmsg="必须以字母开头，支持字母,数字。|用户名必须在6-12位长度之间。|该用户名已存在。">
+                                    <span class="prompt js-prompt">用户名必须以字母开头，支持6~12位的字母、数字及下划线。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 密码</label>
+                                    <input type="password" class="text w218" name="password" id="password2" maxlength="50" data-vtype="must|length" data-vmin="6" data-vmax="50" data-vmsg="请输入密码。|密码长度过短。">
+                                    <span class="prompt js-prompt">密码支持6~20位的字母、数字及下划线。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont"><i class="fcred-3">*</i> 确认密码</label>
+                                    <input type="password" class="text w218" data-vtype="must|same" data-vref="password2" data-vmsg="请输入确认密码。|两次密码输入不一致。">
+                                    <span class="prompt js-prompt">请再次输入与登录密码。</span>
+                                </div>
+                                <div class="input-big js-tip">
+                                    <label class="leftfont">推荐人</label>
+                                    <input type="text" class="text w218" placeholder="请输入您收的推荐号" name="recommendby" value="">
+                                    <span class="prompt js-prompt">如果没有收到推荐号可不填写。</span>
+                                </div>
+                                <div class="ui-vcheckbox mt25 js-tip mlgm1">
+                                    <label class="on" for="checkbox15312792566351">
+                                        <input type="checkbox" name="protocol2" checked="checked" value="1" data-vtype="group" data-vmin="1" data-vmsg="您需要同意用户协议。" id="checkbox15312792566351">同意《<a target="_blank" href="/agreement/?type=userreg">千锋教育教学贷用户协议</a>》</label>
+                                </div>
+                                <input type="hidden" name="type" value="email">
+                                <div class="btn-submits mt10 mlg1">
+                                    <input type="submit" class="btn-bbord c-normal wg3" value="提交注册" data-success-text="注册成功">
+                                    <div class="wg3"><em class="m-sumtip js-vsum"></em></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="m-footer footer-big">
+        <div class="m-container footer-bline">
+            <div class="footer-left">
+                <div class="footer-logo"></div>
+                <div class="footer-workinfo">
+                    <p>
+                        服务热线：<span>工作时间（09:00-18:00）</span>
+                    </p>
+                    <p>
+                        <strong>400-811-9990</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <dl>
+                    <dt>
+                        <a href="/help/">使用帮助</a>
+                    </dt>
+                    <dd>
+                        <a href="/user/register.htm" class="ml10">立即注册</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/list.htm?cid=1" class="ml10">如何投资</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/list.htm?cid=3" class="ml10">如何借款</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="/news/">关于我们</a>
+                    </dt>
+                    <dd>
+                        <a href="/news/?id=4" class="ml10">公司简介</a>
+                    </dd>
+                    <dd>
+                        <a href="/news/?id=5" class="ml10">法律顾问</a>
+                    </dd>
+                    <dd>
+                        <a href="/news/?id=1" class="ml10">联系我们</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="/help/list.htm?cid=4">安全保障</a>
+                    </dt>
+                    <dd>
+                        <a href="/help/list.htm?cid=24" class="ml10">本息保障</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/list.htm?cid=25" class="ml10">政策法规</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/list.htm?cid=27" class="ml10">隐私保护</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <a href="/help/">了解更多</a>
+                    </dt>
+                    <dd>
+                        <a href="/help/" class="ml10">常见问题</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/servicelist.htm" class="ml10">联系客服</a>
+                    </dd>
+                    <dd>
+                        <a href="/help/list.htm?cid=7" class="ml10">资费说明</a>
+                    </dd>
+                </dl>
+                <div class="footer-code">
+                    <img src="/res/core/images/default/twocode.png">
+                </div>
+            </div>
+        </div>
+        <div class="m-container footer-copyinfo pa10">
+            © 版权所有 all rights reserved
+        </div>
+
+
+    </div>
+
+    <div><a href="http://www.hjwis.com/" target="_blank">本系统由慧聚天下网络科提供，p2p网贷系统免费版</a></div>
+</div>
+
+<script src="/res/core/scripts/jquery.js?v=20150624215102"></script>
+<script src="/res/core/scripts/core.js?v=20151225173543"></script>
+<script>var gconfig = { sitename: '千锋教育教学贷', pageext: '.htm' };</script>
+<script src="/res/core/scripts/main.js?v=20151104153540"></script>
+
+
+<script>
+    function validphonecode(val) {
+        return common.sendvalidcode.valid($('.js-vtarget[name=phone]').val(), val);
+    };
+    function validemailcode(val) {
+        return common.sendvalidcode.valid($('.js-vtarget[name=email]').val(), val);
+    };
+    function validvcode(val) {
+        return common.imagevalidcode.valid(val);
+    }
+
+    $('#js-phonecodebtn').click(function () {
+        $('#js-phonecode').attr('data-vmust', 'true');
+        settimeout(function () {
+            $('#js-phonecode').val('').attr('data-vmust', 'false');
+            $('#js-phonecodeimg').trigger('click');
+        }, 60 * 1000);
+    });
+    common.sendvalidcode.initinput();
+
+    function getPhoneCode(inputid){
+       var phonenum= $("#phone").val();
+        //发起网络请求
+        $.ajax({
+            url:"http://localhost:8282/code/phonenum.action?phonenum="+phonenum,
+            type:"POST",
+            dataType:"jsonp",
+            success:function (data) {
+                alert(data);
+                $("#"+inputid).removeAttr("disabled");
+            }
+
+
+        });
+    }
+
+</script>
+
+<!--[if lte ie 6]>
+<script src="/res/core/scripts/dd_belatedpng.js?v=20150624215102"></script>
+<script type="text/javascript">
+    dd_belatedpng.fix('.head-logo,.footer-logo');
+
+
+
+
+
+</script>
+<![endif]-->
+
+
+</body></html>

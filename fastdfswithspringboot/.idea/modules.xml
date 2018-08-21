@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/borrowdatacontroller/borrowdatacontroller.iml" filepath="$PROJECT_DIR$/borrowdatacontroller/borrowdatacontroller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/borrowdatapojo/borrowdatapojo.iml" filepath="$PROJECT_DIR$/borrowdatapojo/borrowdatapojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/borrowdataserviceimpl/borrowdataserviceimpl.iml" filepath="$PROJECT_DIR$/borrowdataserviceimpl/borrowdataserviceimpl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/borrowdataserviceinterface/borrowdataserviceinterface.iml" filepath="$PROJECT_DIR$/borrowdataserviceinterface/borrowdataserviceinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fastdfswithspringboot.iml" filepath="$PROJECT_DIR$/fastdfswithspringboot.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--shiro自己有自己的工具类，所以创建管理器的工作就交给util类了-->
+    <bean id="firstrealm" class="com.qf.liuzhongxu.p2pproject.commons.shiro.myRealm">
+        <!--配置密码的匹配规则-->
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <!--配置"加密"算法的格式 是MD5-->
+                <property name="hashAlgorithmName" value="MD5"></property>
+                <!--一次"加密"不够,将"加密"的结果继续按照相同方式加1024次-->
+                <property name="hashIterations" value="1024"/>
+            </bean>
+
+        </property>
+
+    </bean>
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="firstrealm"/>
+        <!--传入自己的realm，这样就完成了绑定-->
+    </bean>
+</beans>

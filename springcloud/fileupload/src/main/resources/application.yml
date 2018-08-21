@@ -1,0 +1,13 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: file-upload
+  http:
+    multipart:
+      max-file-size: 200Mb
+      max-request-size: 250Mb #启用文件上传并且设置上传文件的最大大小
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:1234@localhost:10000/eureka/

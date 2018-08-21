@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commonsMQ/commonsMQ.iml" filepath="$PROJECT_DIR$/commonsMQ/commonsMQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonsbean/commonsbean.iml" filepath="$PROJECT_DIR$/commonsbean/commonsbean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonsrabbitMQ/commonsrabbitMQ.iml" filepath="$PROJECT_DIR$/commonsrabbitMQ/commonsrabbitMQ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonsredis/commonsredis.iml" filepath="$PROJECT_DIR$/commonsredis/commonsredis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonstools/commonstools.iml" filepath="$PROJECT_DIR$/commonstools/commonstools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/freemarker/freemarker.iml" filepath="$PROJECT_DIR$/freemarker/freemarker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lock/lock.iml" filepath="$PROJECT_DIR$/lock/lock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p2pprojectliuzhongxu.iml" filepath="$PROJECT_DIR$/p2pprojectliuzhongxu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reflectdemo/reflectdemo.iml" filepath="$PROJECT_DIR$/reflectdemo/reflectdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro/shiro.iml" filepath="$PROJECT_DIR$/shiro/shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiroDemo/shiroDemo.iml" filepath="$PROJECT_DIR$/shiroDemo/shiroDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usercontroller/usercontroller.iml" filepath="$PROJECT_DIR$/usercontroller/usercontroller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usermapper/usermapper.iml" filepath="$PROJECT_DIR$/usermapper/usermapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userpojo/userpojo.iml" filepath="$PROJECT_DIR$/userpojo/userpojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userserviceimpl/userserviceimpl.iml" filepath="$PROJECT_DIR$/userserviceimpl/userserviceimpl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userserviceinterface/userserviceinterface.iml" filepath="$PROJECT_DIR$/userserviceinterface/userserviceinterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validcodecontroller/validcodecontroller.iml" filepath="$PROJECT_DIR$/validcodecontroller/validcodecontroller.iml" />
+    </modules>
+  </component>
+</project>

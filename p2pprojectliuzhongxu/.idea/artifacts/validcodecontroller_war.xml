@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="validcodecontroller:war">
+    <output-path>$PROJECT_DIR$/validcodecontroller/target</output-path>
+    <root id="archive" name="usercontroller.war">
+      <element id="artifact" artifact-name="validcodecontroller:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <bean class="java.text.SimpleDateFormat">
+        <constructor-arg name="pattern" value="yyyy-MM-dd HH:mm:ss"/>
+    </bean>
+    <!-- 扫描controller包下所有标注@Controller的组件 -->
+    <context:component-scan base-package="com.qf.liuzhongxu.p2pproject.commons.shiro"/>
+
+    <!--扫描所有的异常类-->
+
+
+
+    <!--放行所有的静态资源-->
+    <mvc:default-servlet-handler/>
+
+    <mvc:annotation-driven />
+<!--有什么用？-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!--shiro的配置首先进行会话管理器和安全管理器的配置-->
+
+    <bean class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager" id="sessionManager">
+        <property name="sessionDAO" ref="sessionDAO" />
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="deleteInvalidSessions" value="true" />
+        <property name="sessionIdCookie.name" value="jsid" />
+        <property name="sessionIdCookie.path" value="/" />
+        <property name="globalSessionTimeout" value="1800000" />
+        <property name="sessionValidationSchedulerEnabled" value="false" />
+    </bean>
+
+    <!--<bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.RedisSessionDao" id="sessionDAO">-->
+    <!--</bean>-->
+    <bean class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" id="securityManager">
+        <!--还要注意可以在这里配置会话管理器和认证方式-->
+        <property name="sessionManager" ref="sessionManager" />
+        <property name="authenticator" ref="authenticator" />
+        <property name="realms">
+            <list>
+                <bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.MyShiroRealm" />
+                <bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.MyShiroRealm2 "/>
+            </list>
+        </property>
+    </bean>
+    <!--配置默认的验证策略，成功一个就放行的策略-->
+    <bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+        <property name="authenticationStrategy">
+            <bean class="org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy" />
+        </property>
+    </bean>
+
+    <!--吧这两个自定义Realm都配置出来吧-->
+    <bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.MyShiroRealm" id="myShiroRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5" />
+                <property name="hashIterations" value="1024" />
+            </bean>
+        </property>
+    </bean>
+    <bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.MyShiroRealm2" id="myShiroRealm2">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher" >
+                <property name="hashAlgorithmName" value="MD5" />
+                <property name="hashIterations" value="1024" />
+            </bean>
+        </property>
+    </bean>
+
+
+    <!--这个地方可以选择将所有的地址全部写在下边，但是也可以使用第二种方法，用类初始化的方法，将所有的情况都放在集合中然后在这里解析
+    但是这个bean必须是继承ShiroFilterFactoryBean这个的-->
+    <bean class="com.qf.liuzhongxu.p2pproject.commons.shiro.MyShiroFilterFactoryBean" init-method="init">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login.jsp"/>
+        <!-- <property name="successUrl" value="/system/main"/> -->
+        <property name="unauthorizedUrl" value="unauthorizedUrl.jsp"/>
+        <!--<property name="filterChainDefinitions">-->
+        <!--<value>-->
+        <!--/js/*=anon-->
+        <!--/css/*=anon-->
+        <!--/index.html=anon-->
+        <!--/login.html=anon-->
+        <!--</value>-->
+        <!--</property>-->
+    </bean>
+
+
+</beans>

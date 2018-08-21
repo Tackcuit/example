@@ -1,0 +1,35 @@
+server:
+  port: 10900
+spring:
+  application:
+    name: apigateway-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:1234@localhost:10000/eureka
+#  instance:
+#    prefer-ip-address: true
+security:
+  user:
+    password: 1234
+    name: user #要注意的是这个必须要有，最新版必须要配置这个安全项，不然是访问不到网页的
+#zuul:
+#  ignoredServices: microservice-consumer-movie-ribbon-with-hystrix #zuul会忽略上边的服务，多个用，隔开
+zuul:
+  routes:
+  #第一种代理方式
+#    PROVIDER: /cos/** #指定服务的代理路径，以后就可以通过这个访问了
+#第二种代理的方式
+    adc:
+      path: /cc/**
+      serviceId: PROVIDER #这个可以去eureka上找
+      #url: http://localhost:7900/ #也可以这样代理
+#ribbon:
+#  eureka:
+#    enabled: false
+#microservice-provider-user: # eureka要代理的服务id，跟上边的是一样的
+#  ribbon:
+#    listOfServers: http://localhost:7900,http://localhost:7901 #这个地方将所有的要配置访问的负载均衡的服务器都配置上
+    aaa:
+      path: /upload/**
+      serviceId: file-upload

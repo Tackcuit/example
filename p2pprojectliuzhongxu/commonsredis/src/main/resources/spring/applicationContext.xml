@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+        <!--首先要让Spring管理这个类，所以要加个注解-->
+        <context:component-scan base-package="com.qf.liuzhongxu.p2pproject.commons" />
+        
+        <bean class="redis.clients.jedis.JedisPoolConfig" id="config">
+                <property name="maxTotal" value="1024" />
+                <property name="minIdle" value="10" />
+                <property name="maxIdle" value="512" />
+                <property name="maxWaitMillis" value="60000" />
+                
+        </bean>
+
+        <bean class="redis.clients.jedis.JedisPool" id="pool">
+                <constructor-arg name="host" value="10.9.166.125" />
+                <constructor-arg name="port" value="8100" />
+                <constructor-arg name="poolConfig" ref="config" />
+        </bean>
+
+</beans>

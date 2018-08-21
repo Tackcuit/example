@@ -1,0 +1,23 @@
+server:
+  port: 10000
+eureka:
+  client:
+    fetch-registry: false
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://user:1234@localhost:10000/eureka #这个是先设置成单机模式 //这种写法要记住
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 1234 #配置这个为用户的账户密码，再次启动的时候就用这个做登录
+    #配置好之后需要的就是将所有的服务都注册到eureka上
+
+
+#ribbon:
+#  eureka:
+#    enabled: false #禁用ribbon
+#PROVIDER: #指定给当前服务使用哪个服务器，不在使用负载均衡
+#  ribbon:
+#    listOfServers: localhost:7900

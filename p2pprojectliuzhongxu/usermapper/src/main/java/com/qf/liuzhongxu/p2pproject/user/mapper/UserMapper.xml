@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.liuzhongxu.p2pproject.user.mapper.UserMapper">
+    <insert id="insertUser" parameterType="com.qf.liuzhongxu.p2pproject.user.pojo.User">
+        <selectKey resultType="java.lang.String" keyColumn="userid" keyProperty="userId" order="BEFORE">
+            <!--electKey的意思是在执行操作之前先生成一个uuid用于用户的id上,而且要将order设置成before-->
+            SELECT UUID();
+        </selectKey>
+        INSERT INTO user_account (userid,username,phonenum,password,referee,mycode,usertypeid,creditlevelid,creditlevelname,userstatus,email) VALUES (#{userId},#{userName},#{phoneNum},#{password},#{referee},#{mycode},#{usertypeid},#{creditlevelid},#{creditlevelname},#{userstatus},#{email})
+    </insert>
+    <!-- 每种sql语句都有自己的执行标签，分别的delete select update 以及insert -->
+    <!--selectKey的意思是在执行操作之前先生成一个uuid用于用户的id上-->
+    <select id="findUserByUsernameAndPassword" resultType="com.qf.liuzhongxu.p2pproject.user.pojo.User">
+        SELECT userid,username,phonenum,password,mycode,creditlevelname,email FROM user_account WHERE username=#{arg0} AND password =#{arg1} AND userstatus='0'
+    </select>
+
+    <select id="selectAllUserType" resultType="com.qf.liuzhongxu.p2pproject.user.pojo.UserType">
+        SELECT usertypeid,usertypename,type FROM usertype;
+    </select>
+</mapper>

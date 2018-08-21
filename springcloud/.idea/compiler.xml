@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apigetawayzuul" />
+        <module name="consumerorder" />
+        <module name="consumerorder-feign" />
+        <module name="consumerorder-hystrix" />
+        <module name="consumerorderribben" />
+        <module name="eurekaserver" />
+        <module name="fileupload" />
+        <module name="getawayfilter" />
+        <module name="LongLinkTest" />
+        <module name="provideruser" />
+        <module name="provideruser-hystrix" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="apigetawayzuul" target="1.8" />
+      <module name="consumerorder" target="1.8" />
+      <module name="consumerorder-feign" target="1.8" />
+      <module name="consumerorder-hystrix" target="1.8" />
+      <module name="consumerorderribben" target="1.8" />
+      <module name="eurekaserver" target="1.8" />
+      <module name="fileupload" target="1.8" />
+      <module name="getawayfilter" target="1.8" />
+      <module name="LongLinkTest" target="1.8" />
+      <module name="provideruser" target="1.8" />
+      <module name="provideruser-hystrix" target="1.8" />
+      <module name="springcloud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
